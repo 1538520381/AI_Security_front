@@ -1,0 +1,681 @@
+{
+  "csvImport": {
+    "step": 1,
+    "id": 1,
+    "name": "csv文件",
+    "type": "csvImport",
+    "content": "拖入即可导入csv文件"
+  },
+  "ExcelImport": {
+    "step": 1,
+    "id": 2,
+    "name": "Excel文件",
+    "type": "ExcelImport",
+    "content": "拖入即可导入Excel文件"
+  },
+  "DBImport": {
+    "step": 1,
+    "id": 3,
+    "name": "DB文件",
+    "type": "DBImport",
+    "content": "拖入即可导入db文件"
+  },
+  "unstructuredImport": {
+    "step": 1,
+    "id": 4,
+    "name": "非结构化数据",
+    "type": "unstructuredImport",
+    "content": "拖入即可导入非结构化数据"
+  },
+  "delMisCol": {
+    "step": 2,
+    "id": 5,
+    "name": "删除缺失列",
+    "type": "DeleteMissingColumns",
+    "content": "删除数据集中某一部分或全部的数据缺失的列，以减少噪音和不完整信息"
+  },
+  "zeroCom": {
+    "step": 2,
+    "id": 6,
+    "name": "0补全",
+    "type": "ZeroCompletion",
+    "content": "对于数据中的缺失值，使用0来填充"
+  },
+  "meanCom": {
+    "step": 2,
+    "id": 7,
+    "name": "均值补全",
+    "type": "MeanCompletion",
+    "content": "对于数据中的缺失值，使用该列的平均值来填充"
+  },
+  "interCom": {
+    "step": 2,
+    "id": 8,
+    "name": "插值补全",
+    "type": "InterpolationCompletion",
+    "content": "对于数据中的缺失值，利用该列已知的数据点间的关系来估计缺失值"
+  },
+  "datasetPart": {
+    "step": 2,
+    "id": 9,
+    "name": "数据集划分",
+    "type": "DatasetPartitioning",
+    "content": "这是数据集划分的组件",
+    "options": [
+      {
+        "value": 0,
+        "label": "随机取30%"
+      },
+      {
+        "value": 1,
+        "label": "随机取50%"
+      },
+      {
+        "value": 2,
+        "label": "随机取70%"
+      },
+      {
+        "value": 3,
+        "label": "前向取30%"
+      },
+      {
+        "value": 4,
+        "label": "前向取50%"
+      },
+      {
+        "value": 5,
+        "label": "前向取70%"
+      },
+      {
+        "value": 6,
+        "label": "后向取30%"
+      },
+      {
+        "value": 7,
+        "label": "后向取50%"
+      },
+      {
+        "value": 8,
+        "label": "后向取70%"
+      }
+    ]
+  },
+  "delError": {
+    "step": 2,
+    "id": 10,
+    "name": "删除异常样本",
+    "type": "DeleteAbnormalSample",
+    "content": "删除数据集中存在的可能对模型产生不良影响的异常值，异常样本是指与数据集中的大多数样本明显不同或者偏离正常模式的样本"
+  },
+  "bcTrans": {
+    "step": 2,
+    "id": 11,
+    "name": "Box-Cox变换",
+    "type": "BCTransformation",
+    "content": "调整数据分布以满足正态性假设"
+  },
+  "ltTrun": {
+    "step": 2,
+    "id": 12,
+    "name": "长尾截断",
+    "type": "LTTruncation",
+    "content": "对相对较大的数值或频率较低的极端值进行截断或删除操作"
+  },
+  "normal": {
+    "step": 2,
+    "id": 13,
+    "name": "归一化",
+    "type": "Normalization",
+    "content": "将数据缩放到一个统一的范围，使得不同特征之间的数值差异不会对模型的训练产生过大的影响"
+  },
+  "standard": {
+    "step": 2,
+    "id": 14,
+    "name": "标准化",
+    "type": "Standardization",
+    "content": "将数据按照一定的规则进行转换，使得转换后的数据具有特定的性质，消除不同特征之间的尺度差异，使得模型能够更好地适应数据"
+  },
+  "onehot": {
+    "step": 2,
+    "id": 15,
+    "name": "One-hot编码",
+    "type": "OnehotEncoding",
+    "content": "将类别型数据转换为二进制向量表示"
+  },
+  "label": {
+    "step": 2,
+    "id": 16,
+    "name": "Label编码",
+    "type": "LabelEncoding",
+    "content": "将类别型数据转换为整数编码"
+  },
+  "equi": {
+    "step": 2,
+    "id": 17,
+    "name": "等距离散化",
+    "type": "EquidistantDispersion",
+    "content": "将连续型数据划分为若干个区间，每个区间的长度相等"
+  },
+  "ordi": {
+    "step": 2,
+    "id": 53,
+    "name": "Ordinal编码",
+    "type": "Ordinal_Encoder",
+    "content": "将有序分类数据映射到连续整数值"
+  },
+  "randomUnder": {
+    "step": 3,
+    "id": 18,
+    "name": "随机欠采样",
+    "type": "RandomUndersampling",
+    "content": "随机删除多数类别的样本，使其数量与少数类别相近",
+    "options": [
+      {
+        "value": 0,
+        "label": "减少20%"
+      },
+      {
+        "value": 1,
+        "label": "减少30%"
+      },
+      {
+        "value": 2,
+        "label": "减少40%"
+      },
+      {
+        "value": 3,
+        "label": "减少50%"
+      },
+      {
+        "value": 4,
+        "label": "减少60%"
+      },
+      {
+        "value": 5,
+        "label": "减少70%"
+      },
+      {
+        "value": 6,
+        "label": "减少80%"
+      }
+    ]
+  },
+  "ennUnder": {
+    "step": 3,
+    "id": 19,
+    "name": "ENN欠采样",
+    "type": "ENNUndersampling",
+    "content": "基于近邻关系的欠采样方法，用于处理类别不平衡的数据集",
+    "options": [
+      {
+        "value": 0,
+        "label": "减少20%"
+      },
+      {
+        "value": 1,
+        "label": "减少30%"
+      },
+      {
+        "value": 2,
+        "label": "减少40%"
+      },
+      {
+        "value": 3,
+        "label": "减少50%"
+      },
+      {
+        "value": 4,
+        "label": "减少60%"
+      },
+      {
+        "value": 5,
+        "label": "减少70%"
+      },
+      {
+        "value": 6,
+        "label": "减少80%"
+      }
+    ]
+  },
+  "repeatedOver": {
+    "step": 3,
+    "id": 20,
+    "name": "重复过采样",
+    "type": "RepeatedOversampling",
+    "content": "通过复制一些少数类别样本，使其数量增加，达到类别平衡",
+    "options": [
+      {
+        "value": 0,
+        "label": "增多2倍"
+      },
+      {
+        "value": 1,
+        "label": "增多3倍"
+      },
+      {
+        "value": 2,
+        "label": "增多4倍"
+      },
+      {
+        "value": 3,
+        "label": "增多5倍"
+      },
+      {
+        "value": 4,
+        "label": "增多6倍"
+      },
+      {
+        "value": 5,
+        "label": "增多8倍"
+      },
+      {
+        "value": 6,
+        "label": "增多10倍"
+      }
+    ]
+  },
+  "smoteOver": {
+    "step": 3,
+    "id": 21,
+    "name": "SMOTE过采样",
+    "type": "SMOTEOversampling",
+    "content": "通过在少数类别样本之间插入合成样本，来增加少数类别的样本数量，以达到类别平衡",
+    "options": [
+      {
+        "value": 0,
+        "label": "增多2倍"
+      },
+      {
+        "value": 1,
+        "label": "增多3倍"
+      },
+      {
+        "value": 2,
+        "label": "增多4倍"
+      },
+      {
+        "value": 3,
+        "label": "增多5倍"
+      },
+      {
+        "value": 4,
+        "label": "增多6倍"
+      },
+      {
+        "value": 5,
+        "label": "增多8倍"
+      },
+      {
+        "value": 6,
+        "label": "增多10倍"
+      }
+    ]
+  },
+  "ganOver": {
+    "step": 3,
+    "id": 22,
+    "name": "GAN过采样",
+    "type": "GANOversampling",
+    "content": "使用生成对抗网络来生成合成样本的过采样方法",
+    "options": [
+      {
+        "value": 0,
+        "label": "增多2倍"
+      },
+      {
+        "value": 1,
+        "label": "增多3倍"
+      },
+      {
+        "value": 2,
+        "label": "增多4倍"
+      },
+      {
+        "value": 3,
+        "label": "增多5倍"
+      },
+      {
+        "value": 4,
+        "label": "增多6倍"
+      },
+      {
+        "value": 5,
+        "label": "增多8倍"
+      },
+      {
+        "value": 6,
+        "label": "增多10倍"
+      }
+    ]
+  },
+  "pca": {
+    "step": 4,
+    "id": 23,
+    "name": "PCA降维",
+    "type": "PCADReduction",
+    "content": "通过找到数据中的主成分，将数据投影到这些主成分上，从而实现维度的降低",
+    "options": [
+      {
+        "value": 0,
+        "label": "降维保留5%"
+      },
+      {
+        "value": 1,
+        "label": "降维保留10%"
+      },
+      {
+        "value": 2,
+        "label": "降维保留15%"
+      },
+      {
+        "value": 3,
+        "label": "降维保留20%"
+      },
+      {
+        "value": 4,
+        "label": "降维保留30%"
+      },
+      {
+        "value": 5,
+        "label": "降维保留40%"
+      },
+      {
+        "value": 6,
+        "label": "降维保留50%"
+      }
+    ]
+  },
+  "lda": {
+    "step": 4,
+    "id": 24,
+    "name": "LDA降维",
+    "type": "LDADReduction",
+    "content": "将数据投影到一个新的低维空间，以最大化类别之间的差异度，最小化同一类别内的方差",
+    "options": [
+      {
+        "value": 0,
+        "label": "降维保留5%"
+      },
+      {
+        "value": 1,
+        "label": "降维保留10%"
+      },
+      {
+        "value": 2,
+        "label": "降维保留15%"
+      },
+      {
+        "value": 3,
+        "label": "降维保留20%"
+      },
+      {
+        "value": 4,
+        "label": "降维保留30%"
+      },
+      {
+        "value": 5,
+        "label": "降维保留40%"
+      },
+      {
+        "value": 6,
+        "label": "降维保留50%"
+      }
+    ]
+  },
+  "correlation": {
+    "step": 4,
+    "id": 25,
+    "name": "相关性选择",
+    "type": "CorrelationSelection",
+    "content": "用于识别和保留与目标变量具有显著相关性的特征",
+    "options": [
+      {
+        "value": 0,
+        "label": "选择5%"
+      },
+      {
+        "value": 1,
+        "label": "选择10%"
+      },
+      {
+        "value": 2,
+        "label": "选择15%"
+      },
+      {
+        "value": 3,
+        "label": "选择20%"
+      },
+      {
+        "value": 4,
+        "label": "选择30%"
+      },
+      {
+        "value": 5,
+        "label": "选择40%"
+      },
+      {
+        "value": 6,
+        "label": "选择50%"
+      }
+    ]
+  },
+  "cif": {
+    "step": 4,
+    "id": 26,
+    "name": "卡方信息特征选择",
+    "type": "CIFSelection",
+    "content": "计算每个特征与目标变量之间的卡方统计量，来衡量它们之间的关联程度",
+    "options": [
+      {
+        "value": 0,
+        "label": "选择5%"
+      },
+      {
+        "value": 1,
+        "label": "选择10%"
+      },
+      {
+        "value": 2,
+        "label": "选择15%"
+      },
+      {
+        "value": 3,
+        "label": "选择20%"
+      },
+      {
+        "value": 4,
+        "label": "选择30%"
+      },
+      {
+        "value": 5,
+        "label": "选择40%"
+      },
+      {
+        "value": 6,
+        "label": "选择50%"
+      }
+    ]
+  },
+  "bcnn": {
+    "step": 5,
+    "id": 27,
+    "name": "基本CNN",
+    "type": "BCNN",
+    "content": "卷积神经网络算法，专门用于处理具有网格结构数据"
+  },
+  "alexNet": {
+    "step": 5,
+    "id": 28,
+    "name": "AlexNet",
+    "type": "AlexNet",
+    "content": "AlexNet算法"
+  },
+  "resNet": {
+    "step": 5,
+    "id": 29,
+    "name": "ResNet",
+    "type": "ResNet",
+    "content": "ResNet算法"
+  },
+  "vgg": {
+    "step": 5,
+    "id": 30,
+    "name": "VGG",
+    "type": "VGG",
+    "content": "ResNet算法"
+  },
+  "brnn": {
+    "step": 5,
+    "id": 31,
+    "name": "基本RNN",
+    "type": "BRNN",
+    "content": "基本RNN算法"
+  },
+  "lstm": {
+    "step": 5,
+    "id": 32,
+    "name": "LSTM",
+    "type": "LSTM",
+    "content": "LSTM算法"
+  },
+  "gru": {
+    "step": 5,
+    "id": 33,
+    "name": "GRU",
+    "type": "GRU",
+    "content": "GRU算法"
+  },
+  "bgnn": {
+    "step": 5,
+    "id": 34,
+    "name": "基本GNN",
+    "type": "BGNN",
+    "content": "基本GNN算法"
+  },
+  "simgnn": {
+    "step": 5,
+    "id": 35,
+    "name": "SimGNN",
+    "type": "SimGNN",
+    "content": "SimGNN算法"
+  },
+  "svm": {
+    "step": 6,
+    "id": 36,
+    "name": "支持向量机",
+    "type": "SVM",
+    "content": "SVM算法"
+  },
+  "nnd": {
+    "step": 6,
+    "id": 37,
+    "name": "最近邻距离",
+    "type": "NND",
+    "content": "最近邻距离算法"
+  },
+  "lr": {
+    "step": 6,
+    "id": 38,
+    "name": "逻辑回归",
+    "type": "LR",
+    "content": "逻辑回归算法"
+  },
+  "dt": {
+    "step": 6,
+    "id": 39,
+    "name": "决策树",
+    "type": "DT",
+    "content": "决策树算法"
+  },
+  "rf": {
+    "step": 6,
+    "id": 40,
+    "name": "随机森林",
+    "type": "RF",
+    "content": "随机森林算法"
+  },
+  "lightgbm": {
+    "step": 6,
+    "id": 41,
+    "name": "LightGBM",
+    "type": "LightGBM",
+    "content": "LightGBM算法"
+  },
+  "xgboost": {
+    "step": 6,
+    "id": 42,
+    "name": "Xgboost",
+    "type": "Xgboost",
+    "content": "Xgboost算法"
+  },
+  "catboost": {
+    "step": 6,
+    "id": 43,
+    "name": "Catboost",
+    "type": "Catboost",
+    "content": "Catboost算法"
+  },
+  "kmeans": {
+    "step": 6,
+    "id": 44,
+    "name": "Kmeans",
+    "type": "Kmeans",
+    "content": "Kmeans算法"
+  },
+  "accuracy": {
+    "step": 7,
+    "id": 45,
+    "name": "准确率",
+    "type": "Accuracy",
+    "content": "测试准确率"
+  },
+  "precision": {
+    "step": 7,
+    "id": 46,
+    "name": "精确率",
+    "type": "Precision",
+    "content": "测试精确率"
+  },
+  "recall": {
+    "step": 7,
+    "id": 47,
+    "name": "召回率",
+    "type": "Recall",
+    "content": "测试召回率"
+  },
+  "f1": {
+    "step": 7,
+    "id": 48,
+    "name": "F1",
+    "type": "F1",
+    "content": "综合考虑模型的精确度和召回率的指标"
+  },
+  "auc": {
+    "step": 7,
+    "id": 49,
+    "name": "AUC",
+    "type": "AUC",
+    "content": "评估二分类模型性能的指标"
+  },
+  "roc": {
+    "step": 7,
+    "id": 50,
+    "name": "ROC",
+    "type": "ROC",
+    "content": "用于可视化和评估二分类模型性能的指标"
+  },
+  "mse": {
+    "step": 7,
+    "id": 51,
+    "name": "MSE",
+    "type": "MSE",
+    "content": "用于评估回归模型性能的指标"
+  },
+  "mape": {
+    "step": 7,
+    "id": 52,
+    "name": "MAPE",
+    "type": "MAPE",
+    "content": "衡量模型在预测时相对于真实值的平均百分比误差的指标"
+  }
+}
